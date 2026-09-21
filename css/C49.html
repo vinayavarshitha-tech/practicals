@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Three Column Flexbox</title>
+
+    <style>
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 40px;
+            background: lightgreen;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Three Column Flexbox</h1>
+
+    <div class="container">
+
+        <div class="column">Column 1</div>
+
+        <div class="column">Column 2</div>
+
+        <div class="column">Column 3</div>
+
+    </div>
+
+</body>
+</html>

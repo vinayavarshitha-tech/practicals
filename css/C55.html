@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Homepage</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+        }
+
+        header {
+            background: #123;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        nav {
+            background: #456;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+        }
+
+        .hero {
+            padding: 80px 20px;
+            text-align: center;
+            background: #eee;
+        }
+
+        .courses {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .course {
+            padding: 30px;
+            background: lightblue;
+        }
+
+        @media (max-width: 600px) {
+            .courses {
+                flex-direction: column;
+            }
+
+            nav a {
+                display: block;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>ABC College</h1>
+        <p>Knowledge • Innovation • Excellence</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="hero">
+        <h2>Welcome to ABC College</h2>
+        <p>Build your future with quality education.</p>
+    </div>
+
+    <div class="courses">
+
+        <div class="course">
+            <h3>Computer Science</h3>
+        </div>
+
+        <div class="course">
+            <h3>Business</h3>
+        </div>
+
+        <div class="course">
+            <h3>Engineering</h3>
+        </div>
+
+    </div>
+
+</body>
+</html>

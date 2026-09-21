@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Two Column Grid</title>
+
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .box {
+            padding: 40px;
+            background: lightblue;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Two Column Grid</h1>
+
+    <div class="container">
+
+        <div class="box">
+            <h2>Column 1</h2>
+            <p>This is the first column.</p>
+        </div>
+
+        <div class="box">
+            <h2>Column 2</h2>
+            <p>This is the second column.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

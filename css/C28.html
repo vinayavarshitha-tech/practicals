@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combinator Selectors</title>
+
+    <style>
+        div p {
+            color: blue;
+        }
+
+        div > h2 {
+            color: green;
+        }
+
+        h2 + p {
+            background: lightyellow;
+        }
+
+        h2 ~ p {
+            border-left: 3px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h2>Combinator Selectors</h2>
+
+        <p>Descendant selector</p>
+
+        <p>Sibling paragraph</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Blog Grid</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+
+        .news {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .article {
+            padding: 20px;
+            background: #eee;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 700px) {
+            .news {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Latest News</h1>
+
+    <div class="news">
+
+        <div class="article">
+            <h2>Technology</h2>
+            <p>Latest technology updates and information.</p>
+        </div>
+
+        <div class="article">
+            <h2>Education</h2>
+            <p>New developments in education.</p>
+        </div>
+
+        <div class="article">
+            <h2>Sports</h2>
+            <p>Latest sports news and events.</p>
+        </div>
+
+        <div class="article">
+            <h2>Science</h2>
+            <p>Interesting scientific discoveries.</p>
+        </div>
+
+        <div class="article">
+            <h2>Business</h2>
+            <p>Business and market updates.</p>
+        </div>
+
+        <div class="article">
+            <h2>Travel</h2>
+            <p>Travel tips and destinations.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inheritance and Specificity</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            color: blue;
+        }
+
+        p {
+            color: green;
+        }
+
+        .special {
+            color: orange;
+        }
+
+        #important {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>CSS Inheritance and Specificity</h1>
+
+    <p>This paragraph gets its color from the element selector.</p>
+
+    <p class="special">
+        This paragraph uses a class selector.
+    </p>
+
+    <p id="important">
+        This paragraph uses an ID selector.
+    </p>
+
+</body>
+</html>
