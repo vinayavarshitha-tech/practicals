@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form 2 - Login Validation</title>
+</head>
+<body>
+
+    <h1>Login Validation</h1>
+
+    <form onsubmit="return login()">
+
+        Username:
+        <input type="text" id="username">
+
+        <br><br>
+
+        Password:
+        <input type="password" id="password">
+
+        <br><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <p id="message"></p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function login() {
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                document.getElementById("message").textContent =
+                    "Username and password are required.";
+                return false;
+            }
+
+            if (username === "admin" && password === "1234") {
+                document.getElementById("message").textContent =
+                    "Login successful!";
+            } else {
+                document.getElementById("message").textContent =
+                    "Invalid username or password.";
+            }
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

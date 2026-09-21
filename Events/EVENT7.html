@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event 7 - Keyboard Game</title>
+
+    <style>
+        #gameArea {
+            width: 500px;
+            height: 300px;
+            border: 2px solid black;
+            position: relative;
+        }
+
+        #player {
+            width: 40px;
+            height: 40px;
+            background-color: blue;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Keyboard-Controlled Game</h1>
+
+    <p>Use the arrow keys to move the box.</p>
+
+    <div id="gameArea">
+        <div id="player"></div>
+    </div>
+
+    <br>
+
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        let player = document.getElementById("player");
+
+        let x = 10;
+        let y = 10;
+
+        document.addEventListener("keydown", function(event) {
+
+            if (event.key === "ArrowRight") {
+                x += 10;
+            }
+
+            if (event.key === "ArrowLeft") {
+                x -= 10;
+            }
+
+            if (event.key === "ArrowUp") {
+                y -= 10;
+            }
+
+            if (event.key === "ArrowDown") {
+                y += 10;
+            }
+
+            player.style.left = x + "px";
+            player.style.top = y + "px";
+        });
+    </script>
+
+</body>
+</html>

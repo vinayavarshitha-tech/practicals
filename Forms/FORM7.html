@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form 7 - Dynamic Validation</title>
+</head>
+<body>
+
+    <h1>Dynamic Validation Messages</h1>
+
+    <form onsubmit="return validateForm()">
+
+        <label>Username:</label>
+        <input type="text"
+               id="username"
+               oninput="validateUsername()">
+
+        <p id="usernameError"></p>
+
+        <label>Email:</label>
+        <input type="text"
+               id="email"
+               oninput="validateEmail()">
+
+        <p id="emailError"></p>
+
+        <label>Password:</label>
+        <input type="password"
+               id="password"
+               oninput="validatePassword()">
+
+        <p id="passwordError"></p>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <p id="message"></p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function validateUsername() {
+
+            let username =
+                document.getElementById("username").value;
+
+            if (username.length < 3) {
+                document.getElementById("usernameError").textContent =
+                    "Username must contain at least 3 characters.";
+            } else {
+                document.getElementById("usernameError").textContent =
+                    "";
+            }
+        }
+
+        function validateEmail() {
+
+            let email =
+                document.getElementById("email").value;
+
+            if (!email.includes("@")) {
+                document.getElementById("emailError").textContent =
+                    "Enter a valid email address.";
+            } else {
+                document.getElementById("emailError").textContent =
+                    "";
+            }
+        }
+
+        function validatePassword() {
+
+            let password =
+                document.getElementById("password").value;
+
+            if (password.length < 6) {
+                document.getElementById("passwordError").textContent =
+                    "Password must contain at least 6 characters.";
+            } else {
+                document.getElementById("passwordError").textContent =
+                    "";
+            }
+        }
+
+        function validateForm() {
+
+            let username =
+                document.getElementById("username").value;
+
+            let email =
+                document.getElementById("email").value;
+
+            let password =
+                document.getElementById("password").value;
+
+            if (username.length < 3 ||
+                !email.includes("@") ||
+                password.length < 6) {
+
+                document.getElementById("message").textContent =
+                    "Please correct the errors.";
+
+                return false;
+            }
+
+            document.getElementById("message").textContent =
+                "Form submitted successfully!";
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

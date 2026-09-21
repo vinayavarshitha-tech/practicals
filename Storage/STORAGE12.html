@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart</title>
+</head>
+<body>
+
+<h1>Shopping Cart</h1>
+
+<button onclick="addItem('Laptop')">Add Laptop</button>
+<button onclick="addItem('Mouse')">Add Mouse</button>
+<button onclick="showCart()">Show Cart</button>
+
+<p id="result"></p>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+function addItem(item) {
+    cart.push(item);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    document.getElementById("result").innerHTML =
+        item + " added to cart.";
+}
+
+function showCart() {
+    document.getElementById("result").innerHTML =
+        cart.length ? cart.join("<br>") : "Cart is empty";
+}
+</script>
+
+<br>
+<a href="index.html">Back to Programs</a>
+
+</body>
+</html>

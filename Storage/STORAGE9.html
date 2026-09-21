@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Record</title>
+</head>
+<body>
+
+<h1>Student Record System</h1>
+
+<input id="name" placeholder="Name">
+<input id="roll" placeholder="Roll Number">
+<button onclick="saveStudent()">Save</button>
+
+<p id="result"></p>
+
+<script>
+function saveStudent() {
+    let student = {
+        name: document.getElementById("name").value,
+        roll: document.getElementById("roll").value
+    };
+
+    localStorage.setItem("studentRecord", JSON.stringify(student));
+
+    document.getElementById("result").innerHTML =
+        "Student record saved.";
+}
+</script>
+
+<br>
+<a href="index.html">Back to Programs</a>
+
+</body>
+</html>

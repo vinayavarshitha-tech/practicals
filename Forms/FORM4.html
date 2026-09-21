@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form 4 - Password Confirmation</title>
+</head>
+<body>
+
+    <h1>Signup Form</h1>
+
+    <form onsubmit="return validateSignup()">
+
+        Username:
+        <input type="text" id="username">
+
+        <br><br>
+
+        Password:
+        <input type="password" id="password">
+
+        <br><br>
+
+        Confirm Password:
+        <input type="password" id="confirmPassword">
+
+        <br><br>
+
+        <button type="submit">Sign Up</button>
+
+    </form>
+
+    <p id="message"></p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function validateSignup() {
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+            if (username === "" || password === "" || confirmPassword === "") {
+                document.getElementById("message").textContent =
+                    "Please fill all fields.";
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                document.getElementById("message").textContent =
+                    "Passwords do not match.";
+                return false;
+            }
+
+            document.getElementById("message").textContent =
+                "Signup successful!";
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser 8 - Location Object</title>
+</head>
+<body>
+
+    <h1>Location Object</h1>
+
+    <button onclick="showLocation()">Show Location</button>
+
+    <p id="output"></p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function showLocation() {
+            document.getElementById("output").textContent =
+                "Current URL: " + location.href;
+        }
+    </script>
+
+</body>
+</html>

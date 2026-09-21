@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser 3 - setTimeout</title>
+</head>
+<body>
+
+    <h1>setTimeout()</h1>
+
+    <button onclick="startTimer()">Start</button>
+
+    <p id="output">Waiting...</p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function startTimer() {
+            document.getElementById("output").textContent =
+                "Wait for 3 seconds...";
+
+            setTimeout(function() {
+                document.getElementById("output").textContent =
+                    "3 seconds completed!";
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>

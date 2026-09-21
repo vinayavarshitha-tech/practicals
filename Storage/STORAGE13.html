@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Preference</title>
+</head>
+<body>
+
+<h1>Login Preference System</h1>
+
+<input id="username" placeholder="Username">
+<button onclick="savePreference()">Remember Me</button>
+
+<p id="result"></p>
+
+<script>
+function savePreference() {
+    let username = document.getElementById("username").value;
+
+    localStorage.setItem("loginUsername", username);
+
+    document.getElementById("result").innerHTML =
+        "Login preference saved.";
+}
+</script>
+
+<br>
+<a href="index.html">Back to Programs</a>
+
+</body>
+</html>

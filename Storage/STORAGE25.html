@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD using localStorage</title>
+</head>
+<body>
+
+<h1>CRUD Application using localStorage</h1>
+
+<input id="name" placeholder="Enter name">
+<button onclick="addRecord()">Add</button>
+
+<div id="records"></div>
+
+<script>
+let records = JSON.parse(localStorage.getItem("records")) || [];
+
+function displayRecords() {
+    let output = "";
+
+    records.forEach(function(record, index) {
+        output +=
+            "<p>" +
+            record +
+            " " +
+            "<button onclick='editRecord(" + index + ")'>Edit</button>" +
+            " " +
+            "<button onclick='deleteRecord(" + index + ")'>Delete</button>" +
+            "</p>";
+    });
+
+    document.getElementById("records").innerHTML = output;
+}
+
+function addRecord() {
+    let name = document.getElementById("name").value;
+
+    if (name !== "") {
+        records.push(name);
+
+        localStorage.setItem(
+            "records",
+            JSON.stringify(records)
+        );
+
+        document.getElementById("name").value = "";
+
+        displayRecords();
+    }
+}
+
+function editRecord(index) {
+    let newName = prompt("Enter new name:", records[index]);
+
+    if (newName !== null && newName !== "") {
+        records[index] = newName;
+
+        localStorage.setItem(
+            "records",
+            JSON.stringify(records)
+        );
+
+        displayRecords();
+    }
+}
+
+function deleteRecord(index) {
+    records.splice(index, 1);
+
+    localStorage.setItem(
+        "records",
+        JSON.stringify(records)
+    );
+
+    displayRecords();
+}
+
+displayRecords();
+</script>
+
+<br>
+<a href="index.html">Back to Programs</a>
+
+</body>
+</html>

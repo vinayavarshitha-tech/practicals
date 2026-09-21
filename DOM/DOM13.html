@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM 13 - Dynamic Dropdown</title>
+</head>
+<body>
+
+    <h1>Dynamic Dropdown</h1>
+
+    <select id="course">
+        <option value="">Select Course</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="addCourses()">Add Courses</button>
+
+    <br><br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function addCourses() {
+
+            let courses = [
+                "Computer Science",
+                "Information Technology",
+                "Data Science",
+                "Artificial Intelligence"
+            ];
+
+            let dropdown = document.getElementById("course");
+
+            for (let course of courses) {
+
+                let option = document.createElement("option");
+
+                option.textContent = course;
+                option.value = course;
+
+                dropdown.appendChild(option);
+            }
+        }
+    </script>
+
+</body>
+</html>

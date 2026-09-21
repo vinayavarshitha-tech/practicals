@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser 1 - Window Object</title>
+</head>
+<body>
+
+    <h1>Window Object</h1>
+
+    <button onclick="showWindow()">Show Window Information</button>
+
+    <p id="output"></p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function showWindow() {
+            document.getElementById("output").innerHTML =
+                "Window Width: " + window.innerWidth +
+                "<br>Window Height: " + window.innerHeight;
+        }
+    </script>
+
+</body>
+</html>

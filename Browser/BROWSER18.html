@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser 18 - Geolocation</title>
+</head>
+<body>
+
+    <h1>Browser Geolocation</h1>
+
+    <button onclick="getLocation()">Get Location</button>
+
+    <p id="output"></p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function getLocation() {
+
+            if (navigator.geolocation) {
+
+                navigator.geolocation.getCurrentPosition(
+                    showPosition,
+                    showError
+                );
+
+            } else {
+                document.getElementById("output").textContent =
+                    "Geolocation is not supported.";
+            }
+        }
+
+        function showPosition(position) {
+
+            document.getElementById("output").innerHTML =
+                "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+        }
+
+        function showError() {
+
+            document.getElementById("output").textContent =
+                "Location permission was not granted.";
+        }
+    </script>
+
+</body>
+</html>

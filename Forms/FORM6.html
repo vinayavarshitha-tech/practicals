@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form 6 - College Admission</title>
+</head>
+<body>
+
+    <h1>College Admission Form</h1>
+
+    <form onsubmit="return validateAdmission()">
+
+        Student Name:
+        <input type="text" id="name">
+
+        <br><br>
+
+        Email:
+        <input type="email" id="email">
+
+        <br><br>
+
+        Phone:
+        <input type="text" id="phone">
+
+        <br><br>
+
+        Percentage:
+        <input type="number" id="percentage">
+
+        <br><br>
+
+        Course:
+        <select id="course">
+            <option value="">Select Course</option>
+            <option>BCA</option>
+            <option>BSc Computer Science</option>
+            <option>BTech</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Apply</button>
+
+    </form>
+
+    <p id="message"></p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function validateAdmission() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let percentage =
+                document.getElementById("percentage").value;
+            let course = document.getElementById("course").value;
+
+            if (name === "" || email === "" || phone === "" ||
+                percentage === "" || course === "") {
+
+                document.getElementById("message").textContent =
+                    "Please fill all fields.";
+
+                return false;
+            }
+
+            if (phone.length !== 10) {
+                document.getElementById("message").textContent =
+                    "Phone number must contain 10 digits.";
+
+                return false;
+            }
+
+            if (percentage < 0 || percentage > 100) {
+                document.getElementById("message").textContent =
+                    "Enter a valid percentage.";
+
+                return false;
+            }
+
+            document.getElementById("message").textContent =
+                "Admission form submitted successfully!";
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

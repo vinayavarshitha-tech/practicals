@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiple Values</title>
+</head>
+<body>
+
+<h1>Store Multiple Values</h1>
+
+<button onclick="saveData()">Save Data</button>
+<button onclick="showData()">Show Data</button>
+
+<p id="result"></p>
+
+<script>
+function saveData() {
+    localStorage.setItem("name", "Vinaya");
+    localStorage.setItem("course", "Web Technology");
+    localStorage.setItem("college", "College");
+
+    document.getElementById("result").innerHTML =
+        "Multiple values saved.";
+}
+
+function showData() {
+    document.getElementById("result").innerHTML =
+        "Name: " + localStorage.getItem("name") +
+        "<br>Course: " + localStorage.getItem("course") +
+        "<br>College: " + localStorage.getItem("college");
+}
+</script>
+
+<br>
+<a href="index.html">Back to Programs</a>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM 8 - Dynamic Table</title>
+</head>
+<body>
+
+    <h1>Dynamic Table</h1>
+
+    <button onclick="createTable()">Create Table</button>
+
+    <div id="tableContainer"></div>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function createTable() {
+
+            let table = document.createElement("table");
+            table.border = "1";
+
+            let data = [
+                ["Name", "Age"],
+                ["Alice", "20"],
+                ["Bob", "21"],
+                ["Charlie", "19"]
+            ];
+
+            for (let row of data) {
+
+                let tr = document.createElement("tr");
+
+                for (let value of row) {
+                    let td = document.createElement("td");
+                    td.textContent = value;
+                    tr.appendChild(td);
+                }
+
+                table.appendChild(tr);
+            }
+
+            document.getElementById("tableContainer").appendChild(table);
+        }
+    </script>
+
+</body>
+</html>

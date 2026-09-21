@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store Object</title>
+</head>
+<body>
+
+<h1>Store JavaScript Object</h1>
+
+<button onclick="saveObject()">Save Object</button>
+<button onclick="showObject()">Show Object</button>
+
+<p id="result"></p>
+
+<script>
+function saveObject() {
+    let student = {
+        name: "Vinaya",
+        age: 18,
+        course: "Computer Science"
+    };
+
+    localStorage.setItem("student", JSON.stringify(student));
+
+    document.getElementById("result").innerHTML =
+        "Object saved.";
+}
+
+function showObject() {
+    let student = JSON.parse(localStorage.getItem("student"));
+
+    document.getElementById("result").innerHTML =
+        student
+        ? "Name: " + student.name +
+          "<br>Age: " + student.age +
+          "<br>Course: " + student.course
+        : "No object found";
+}
+</script>
+
+<br>
+<a href="index.html">Back to Programs</a>
+
+</body>
+</html>

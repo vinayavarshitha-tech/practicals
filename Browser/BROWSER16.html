@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser 16 - Online Offline</title>
+</head>
+<body>
+
+    <h1>Online / Offline Detection</h1>
+
+    <p id="status"></p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function checkStatus() {
+
+            if (navigator.onLine) {
+                document.getElementById("status").textContent =
+                    "You are currently Online.";
+            } else {
+                document.getElementById("status").textContent =
+                    "You are currently Offline.";
+            }
+        }
+
+        checkStatus();
+
+        window.addEventListener("online", checkStatus);
+        window.addEventListener("offline", checkStatus);
+    </script>
+
+</body>
+</html>

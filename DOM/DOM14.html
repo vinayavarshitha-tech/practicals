@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM 14 - Dependent Dropdown</title>
+</head>
+<body>
+
+    <h1>Country → State → City</h1>
+
+    <label>Country:</label>
+
+    <select id="country" onchange="loadStates()">
+        <option value="">Select Country</option>
+        <option value="india">India</option>
+        <option value="usa">USA</option>
+    </select>
+
+    <br><br>
+
+    <label>State:</label>
+
+    <select id="state" onchange="loadCities()">
+        <option value="">Select State</option>
+    </select>
+
+    <br><br>
+
+    <label>City:</label>
+
+    <select id="city">
+        <option value="">Select City</option>
+    </select>
+
+    <br><br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        let states = {
+            india: ["Tamil Nadu", "Karnataka"],
+            usa: ["California", "Texas"]
+        };
+
+        let cities = {
+            "Tamil Nadu": ["Chennai", "Coimbatore"],
+            "Karnataka": ["Bangalore", "Mysore"],
+            "California": ["Los Angeles", "San Francisco"],
+            "Texas": ["Houston", "Dallas"]
+        };
+
+        function loadStates() {
+
+            let country = document.getElementById("country").value;
+            let state = document.getElementById("state");
+
+            state.innerHTML = '<option value="">Select State</option>';
+
+            if (country) {
+
+                states[country].forEach(function(item) {
+
+                    let option = document.createElement("option");
+
+                    option.value = item;
+                    option.textContent = item;
+
+                    state.appendChild(option);
+                });
+            }
+
+            document.getElementById("city").innerHTML =
+                '<option value="">Select City</option>';
+        }
+
+        function loadCities() {
+
+            let state = document.getElementById("state").value;
+            let city = document.getElementById("city");
+
+            city.innerHTML = '<option value="">Select City</option>';
+
+            if (state) {
+
+                cities[state].forEach(function(item) {
+
+                    let option = document.createElement("option");
+
+                    option.value = item;
+                    option.textContent = item;
+
+                    city.appendChild(option);
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>

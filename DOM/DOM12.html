@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM 12 - Password Show Hide</title>
+</head>
+<body>
+
+    <h1>Password Show / Hide</h1>
+
+    <input type="password" id="password">
+
+    <button onclick="showPassword()">Show</button>
+    <button onclick="hidePassword()">Hide</button>
+
+    <br><br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function showPassword() {
+            document.getElementById("password").type = "text";
+        }
+
+        function hidePassword() {
+            document.getElementById("password").type = "password";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi Page Form</title>
+</head>
+<body>
+
+<h1>Multi-Page Form</h1>
+
+<input id="name" placeholder="Enter your name">
+<button onclick="nextPage()">Next</button>
+
+<script>
+function nextPage() {
+    let name = document.getElementById("name").value;
+
+    sessionStorage.setItem("formName", name);
+
+    window.location.href = "STORAGE20-page2.html";
+}
+</script>
+
+<br>
+<a href="index.html">Back to Programs</a>
+
+</body>
+</html>

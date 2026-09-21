@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM 1 - Add Elements</title>
+</head>
+<body>
+
+    <h1>Add New Elements Dynamically</h1>
+
+    <button onclick="addElement()">Add Paragraph</button>
+
+    <div id="container"></div>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function addElement() {
+            let paragraph = document.createElement("p");
+            paragraph.textContent = "New paragraph added using JavaScript!";
+            document.getElementById("container").appendChild(paragraph);
+        }
+    </script>
+
+</body>
+</html>

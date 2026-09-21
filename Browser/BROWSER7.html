@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser 7 - Stopwatch</title>
+</head>
+<body>
+
+    <h1>Stopwatch</h1>
+
+    <h2 id="time">0</h2>
+
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="reset()">Reset</button>
+
+    <br><br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        let seconds = 0;
+        let timer;
+
+        function start() {
+            timer = setInterval(function() {
+                seconds++;
+                document.getElementById("time").textContent =
+                    seconds + " seconds";
+            }, 1000);
+        }
+
+        function stop() {
+            clearInterval(timer);
+        }
+
+        function reset() {
+            clearInterval(timer);
+            seconds = 0;
+            document.getElementById("time").textContent = "0";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temporary Form Data</title>
+</head>
+<body>
+
+<h1>Temporary Form Data</h1>
+
+<input id="name" placeholder="Enter name">
+<button onclick="saveData()">Save</button>
+
+<p id="result"></p>
+
+<script>
+function saveData() {
+    let name = document.getElementById("name").value;
+
+    sessionStorage.setItem("tempName", name);
+
+    document.getElementById("result").innerHTML =
+        "Data saved in sessionStorage.";
+}
+</script>
+
+<br>
+<a href="index.html">Back to Programs</a>
+
+</body>
+</html>

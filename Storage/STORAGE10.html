@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+
+<h1>To-Do List</h1>
+
+<input id="task" placeholder="Enter task">
+<button onclick="addTask()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+function displayTasks() {
+    document.getElementById("list").innerHTML = "";
+
+    tasks.forEach(function(task) {
+        let li = document.createElement("li");
+        li.innerHTML = task;
+        document.getElementById("list").appendChild(li);
+    });
+}
+
+function addTask() {
+    let task = document.getElementById("task").value;
+
+    if (task !== "") {
+        tasks.push(task);
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        document.getElementById("task").value = "";
+        displayTasks();
+    }
+}
+
+displayTasks();
+</script>
+
+<br>
+<a href="index.html">Back to Programs</a>
+
+</body>
+</html>

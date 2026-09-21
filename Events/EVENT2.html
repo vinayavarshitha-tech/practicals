@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event 2 - Keyboard Events</title>
+</head>
+
+<body>
+
+    <h1>Keyboard Events</h1>
+
+    <input type="text"
+           id="inputBox"
+           onkeydown="keyDown()"
+           onkeyup="keyUp()"
+           placeholder="Type something">
+
+    <p id="message">Press a key...</p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function keyDown() {
+            document.getElementById("message").textContent =
+                "A key was pressed!";
+        }
+
+        function keyUp() {
+            document.getElementById("message").textContent =
+                "The key was released!";
+        }
+    </script>
+
+</body>
+</html>

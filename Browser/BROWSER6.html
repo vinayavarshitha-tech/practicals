@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser 5 - Digital Clock</title>
+</head>
+<body>
+
+    <h1>Digital Clock</h1>
+
+    <h2 id="clock"></h2>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function showTime() {
+            let now = new Date();
+
+            document.getElementById("clock").textContent =
+                now.toLocaleTimeString();
+        }
+
+        setInterval(showTime, 1000);
+
+        showTime();
+    </script>
+
+</body>
+</html>

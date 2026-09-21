@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser 14 - Browser Information</title>
+</head>
+<body>
+
+    <h1>Browser Information</h1>
+
+    <p id="output"></p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        document.getElementById("output").innerHTML =
+            "User Agent: " + navigator.userAgent +
+            "<br>Browser Language: " + navigator.language +
+            "<br>Platform: " + navigator.platform;
+    </script>
+
+</body>
+</html>

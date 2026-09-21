@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Font Size Preference</title>
+</head>
+<body>
+
+<h1>Preferred Font Size</h1>
+
+<button onclick="setSize('16px')">Small</button>
+<button onclick="setSize('24px')">Medium</button>
+<button onclick="setSize('32px')">Large</button>
+
+<p id="text">This text changes size and saves your preference.</p>
+
+<script>
+function setSize(size) {
+    document.getElementById("text").style.fontSize = size;
+
+    localStorage.setItem("fontSize", size);
+}
+
+let savedSize = localStorage.getItem("fontSize");
+
+if (savedSize) {
+    document.getElementById("text").style.fontSize = savedSize;
+}
+</script>
+
+<br>
+<a href="index.html">Back to Programs</a>
+
+</body>
+</html>

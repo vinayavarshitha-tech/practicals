@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Storage Comparison</title>
+</head>
+<body>
+
+<h1>localStorage vs sessionStorage</h1>
+
+<button onclick="saveData()">Save Data</button>
+
+<p id="result"></p>
+
+<script>
+function saveData() {
+    localStorage.setItem("localData", "Permanent data");
+    sessionStorage.setItem("sessionData", "Temporary data");
+
+    document.getElementById("result").innerHTML =
+        "localStorage: " + localStorage.getItem("localData") +
+        "<br>sessionStorage: " + sessionStorage.getItem("sessionData");
+}
+</script>
+
+<br>
+<a href="index.html">Back to Programs</a>
+
+</body>
+</html>

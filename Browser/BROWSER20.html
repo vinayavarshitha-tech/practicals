@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser 20 - Network Status</title>
+</head>
+<body>
+
+    <h1>Network Status</h1>
+
+    <h2 id="status"></h2>
+
+    <p id="message"></p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function updateStatus() {
+
+            if (navigator.onLine) {
+
+                document.getElementById("status").textContent =
+                    "Online";
+
+                document.getElementById("message").textContent =
+                    "Internet connection is available.";
+
+            } else {
+
+                document.getElementById("status").textContent =
+                    "Offline";
+
+                document.getElementById("message").textContent =
+                    "Internet connection is not available.";
+            }
+        }
+
+        updateStatus();
+
+        window.addEventListener("online", updateStatus);
+        window.addEventListener("offline", updateStatus);
+    </script>
+
+</body>
+</html>

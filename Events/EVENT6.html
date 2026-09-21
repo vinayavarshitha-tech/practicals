@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event 6 - Event Delegation</title>
+</head>
+
+<body>
+
+    <h1>Event Delegation</h1>
+
+    <ul id="studentList">
+        <li>Alice</li>
+        <li>Bob</li>
+        <li>Charlie</li>
+        <li>David</li>
+    </ul>
+
+    <p id="message">Click a name.</p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        document.getElementById("studentList").addEventListener(
+            "click",
+            function(event) {
+
+                if (event.target.tagName === "LI") {
+
+                    document.getElementById("message").textContent =
+                        "You clicked: " + event.target.textContent;
+                }
+            }
+        );
+    </script>
+
+</body>
+</html>

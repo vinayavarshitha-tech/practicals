@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event 5 - Bubbling and Capturing</title>
+
+    <style>
+        #outer {
+            padding: 40px;
+            background-color: lightblue;
+        }
+
+        #middle {
+            padding: 30px;
+            background-color: lightgreen;
+        }
+
+        #inner {
+            padding: 20px;
+            background-color: lightyellow;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Event Bubbling and Capturing</h1>
+
+    <div id="outer">
+        Outer Div
+
+        <div id="middle">
+            Middle Div
+
+            <button id="inner">
+                Click Me
+            </button>
+
+        </div>
+    </div>
+
+    <p id="message"></p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        document.getElementById("outer").addEventListener(
+            "click",
+            function() {
+                document.getElementById("message").textContent =
+                    "Outer element clicked";
+            }
+        );
+
+        document.getElementById("middle").addEventListener(
+            "click",
+            function() {
+                document.getElementById("message").textContent =
+                    "Middle element clicked";
+            }
+        );
+
+        document.getElementById("inner").addEventListener(
+            "click",
+            function() {
+                document.getElementById("message").textContent =
+                    "Button clicked - event bubbling occurred";
+            }
+        );
+    </script>
+
+</body>
+</html>

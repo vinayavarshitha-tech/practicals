@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser 19 - Coordinates</title>
+</head>
+<body>
+
+    <h1>Current Geographical Coordinates</h1>
+
+    <button onclick="getCoordinates()">Get Coordinates</button>
+
+    <p id="output"></p>
+
+    <br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        function getCoordinates() {
+
+            navigator.geolocation.getCurrentPosition(function(position) {
+
+                document.getElementById("output").innerHTML =
+                    "Latitude: " + position.coords.latitude +
+                    "<br>Longitude: " + position.coords.longitude;
+
+            }, function() {
+
+                document.getElementById("output").textContent =
+                    "Unable to get location.";
+
+            });
+        }
+    </script>
+
+</body>
+</html>

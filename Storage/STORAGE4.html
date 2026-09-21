@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete localStorage Item</title>
+</head>
+<body>
+
+<h1>Delete localStorage Item</h1>
+
+<button onclick="deleteName()">Delete Username</button>
+
+<p id="result"></p>
+
+<script>
+function deleteName() {
+    localStorage.removeItem("username");
+
+    document.getElementById("result").innerHTML =
+        "Username deleted.";
+}
+</script>
+
+<br>
+<a href="index.html">Back to Programs</a>
+
+</body>
+</html>

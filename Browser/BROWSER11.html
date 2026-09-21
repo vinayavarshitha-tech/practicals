@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser 11 - History Object</title>
+</head>
+<body>
+
+    <h1>History Object</h1>
+
+    <p>Number of pages in browser history:</p>
+
+    <h2 id="output"></h2>
+
+    <button onclick="goBack()">Go Back</button>
+
+    <br><br>
+    <a href="../index.html">← Back to Programs</a>
+
+    <script>
+        document.getElementById("output").textContent =
+            history.length;
+
+        function goBack() {
+            history.back();
+        }
+    </script>
+
+</body>
+</html>
